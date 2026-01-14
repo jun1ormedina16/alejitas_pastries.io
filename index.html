@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alejitas Pastrie's</title>
+    <link rel="stylesheet" href="./css/estilos.css">
+</head>
+<body>
+
+<!-- HEADER / NAVBAR -->
+<header>
+    <nav class="navbar">
+        <div class="logo">Alejitas Pastrie's</div>
+        <ul class="nav-links">
+            <li><a href="#about" data-es="Sobre mí" data-en="About Me">Sobre mí</a></li>
+            <li><a href="#specialties" data-es="Especialidades" data-en="Specialties">Especialidades</a></li>
+            <li><a href="#products" data-es="Productos" data-en="Products">Productos</a></li>
+            <li><a href="#contact" data-es="Contacto" data-en="Contact">Contacto</a></li>
+            <!-- Idioma en móvil -->
+        </ul>
+
+<!-- Selector desktop -->
+<div class="language-selector desktop-lang">
+    <label for="lang-select-desktop">Idioma:</label>
+    <select id="lang-select-desktop">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+    </select>
+</div>
+
+<!-- Dentro del menú (solo móvil) -->
+<li class="mobile-lang">
+    <label for="lang-select-mobile">Idioma:</label>
+    <select id="lang-select-mobile">
+        <option value="es">ES</option>
+        <option value="en">EN</option>
+    </select>
+</li>
+
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <div class="hero">
+        <div class="hero-text">
+            <h1 data-es="Repostería artesanal con amor y elegancia" data-en="Handmade pastries with love and elegance">
+                Repostería artesanal con amor y elegancia
+            </h1>
+            <button onclick="pedido()" data-es="Haz tu pedido" data-en="Place your order">Haz tu pedido</button>
+        </div>
+    </div>
+</header>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <h2 data-es="Sobre Alejita" data-en="About Alejita">Sobre Alejita</h2>
+    <p data-es="Cada postre está hecho a mano con ingredientes de calidad, cuidando cada detalle para crear momentos inolvidables."
+       data-en="Every pastry is handmade with quality ingredients, paying attention to every detail to create unforgettable moments.">
+       Cada postre está hecho a mano con ingredientes de calidad, cuidando cada detalle para crear momentos inolvidables.
+    </p>
+</section>
+
+<!-- SPECIALTIES -->
+<section class="specialties" id="specialties">
+    <h2 data-es="Especialidades" data-en="Specialties">Especialidades</h2>
+    <div class="cards">
+        <div class="card" data-es="Cupcakes Gourmet" data-en="Gourmet Cupcakes">Cupcakes Gourmet</div>
+        <div class="card" data-es="Pasteles Personalizados" data-en="Custom Cakes">Pasteles Personalizados</div>
+        <div class="card" data-es="Postres Premium" data-en="Premium Desserts">Postres Premium</div>
+    </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+    <h2 data-es="Nuestros Productos" data-en="Our Products">Nuestros Productos</h2>
+    <div class="product-cards">
+        <div class="product-card">
+            <img src="img/cupcake1.jpg" alt="Cupcake de chocolate">
+            <h3 data-es="Cupcake de Chocolate" data-en="Chocolate Cupcake">Cupcake de Chocolate</h3>
+            <p data-es="Delicioso cupcake con frosting de chocolate y topping de chispas."
+               data-en="Delicious cupcake with chocolate frosting and sprinkle topping.">
+               Delicioso cupcake con frosting de chocolate y topping de chispas.
+            </p>
+            <span class="price">$3.50</span>
+            <button onclick="agregarCarrito('Cupcake de Chocolate')" data-es="Agregar al carrito" data-en="Add to cart">Agregar al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/pastel1.jpg" alt="Pastel de fresa">
+            <h3 data-es="Pastel de Fresa" data-en="Strawberry Cake">Pastel de Fresa</h3>
+            <p data-es="Pastel esponjoso con relleno de fresas frescas y crema suave."
+               data-en="Fluffy cake with fresh strawberries filling and soft cream.">
+               Pastel esponjoso con relleno de fresas frescas y crema suave.
+            </p>
+            <span class="price">$15.00</span>
+            <button onclick="agregarCarrito('Pastel de Fresa')" data-es="Agregar al carrito" data-en="Add to cart">Agregar al carrito</button>
+        </div>
+
+        <div class="product-card">
+            <img src="img/postre1.jpg" alt="Postre gourmet">
+            <h3 data-es="Postre Gourmet" data-en="Gourmet Dessert">Postre Gourmet</h3>
+            <p data-es="Mini postre con mezcla de sabores exquisitos y presentación elegante."
+               data-en="Mini dessert with exquisite flavor mix and elegant presentation.">
+               Mini postre con mezcla de sabores exquisitos y presentación elegante.
+            </p>
+            <span class="price">$6.00</span>
+            <button onclick="agregarCarrito('Postre Gourmet')" data-es="Agregar al carrito" data-en="Add to cart">Agregar al carrito</button>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="cta" id="contact">
+    <h2 data-es="Endulza tu día" data-en="Sweeten your day">Endulza tu día</h2>
+    <button onclick="pedido()" data-es="Ordenar ahora" data-en="Order Now">Ordenar ahora</button>
+</section>
+
+<!-- CART -->
+<section class="cart">
+    <h2 data-es="Carrito de Compras" data-en="Shopping Cart">Carrito de Compras</h2>
+    <ul id="cart-items">
+        <li data-es="El carrito está vacío" data-en="Cart is empty">El carrito está vacío</li>
+    </ul>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Alejitas Pastrie's | Dulzura que enamora 💛</p>
+</footer>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
